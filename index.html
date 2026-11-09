@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Yaseeni WiFi Manager administration starter">
+<title>Yaseeni WiFi Manager</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="topbar"><div class="brand"><span class="brand-mark">Y</span><div><strong>Yaseeni WiFi</strong><small>Network Management</small></div></div><span class="environment">DEMO MODE</span></header>
+<main class="container">
+<section class="welcome"><div><p class="eyebrow">ADMINISTRATION</p><h1>WiFi Manager</h1><p class="muted">Manage authorized accounts across your rooms.</p></div><button id="addUser" class="primary">＋ Add user</button></section>
+<section class="stats">
+<article class="stat"><span>Total users</span><strong id="totalUsers">4</strong></article>
+<article class="stat"><span>Active</span><strong id="activeUsers">2</strong></article>
+<article class="stat"><span>Expired</span><strong id="expiredUsers">1</strong></article>
+<article class="stat"><span>Disabled</span><strong id="disabledUsers">1</strong></article>
+</section>
+<section class="panel"><div class="panel-head"><div><h2>User accounts</h2><p class="muted">Sample records — not connected to a live router.</p></div><input id="search" type="search" placeholder="Search users or rooms" aria-label="Search users or rooms"></div>
+<div class="table-wrap"><table><thead><tr><th>User</th><th>Room</th><th>Username</th><th>Expiry</th><th>Status</th><th>Action</th></tr></thead><tbody id="users"></tbody></table></div>
+</section>
+<p class="notice"><strong>Network enforcement is not active.</strong> This dashboard is only a starter interface. A compatible gateway/captive portal must enforce access; changing a user's status here alone will not disconnect their device.</p>
+</main>
+<dialog id="userDialog"><form id="userForm"><div class="dialog-head"><h2>Add user</h2><button type="button" class="icon-btn" id="closeDialog" aria-label="Close">×</button></div><label>Full name<input name="name" required maxlength="80"></label><label>Room<select name="room"><option>Room 01</option><option>Room 02</option><option>Room 03</option><option>Room 04</option><option>Room 05</option><option>Room 06</option><option>Room 07</option><option>Room 08</option><option>Room 09</option><option>Room 10</option></select></label><label>Username<input name="username" required pattern="[A-Za-z0-9_-]{3,32}" maxlength="32"></label><label>Expiry date<input name="expiresAt" type="date" required></label><div class="dialog-actions"><button type="button" class="secondary" id="cancel">Cancel</button><button class="primary" type="submit">Save demo user</button></div></form></dialog>
+<footer>Yaseeni WiFi Manager · Starter version</footer><script src="app.js"></script>
+</body></html>
